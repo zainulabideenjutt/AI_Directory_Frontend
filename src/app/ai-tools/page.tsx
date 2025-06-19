@@ -1,12 +1,13 @@
 'use client';
 
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, ReactElement, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import ToolCard from '../../components/ToolCard';
 import Newsletter from '../../components/Newsletter';
 import { useTools, useCategories, useTypes } from '@/hooks/useApi';
+import { Tool, Category, Type } from '@/api/services';
 
 export default function FreeAiPage() {
   const router = useRouter();
@@ -83,12 +84,12 @@ export default function FreeAiPage() {
     if (newSearch !== searchQuery) setSearchQuery(newSearch);
     if (newPage !== currentPage) setCurrentPage(newPage);
     if (newSort !== sortBy) setSortBy(newSort);
-  }, [searchParams]);
+  }, [searchParams, selectedCategory, selectedType, searchQuery, currentPage, sortBy]);
 
   // Fetch all data (not paginated) - remove pagination parameters from API call
   const { data: allToolsData, isLoading: isLoadingTools, error: toolsError } = useTools();
-  const { data: categories, isLoading: isLoadingCategories } = useCategories();
-  const { data: types, isLoading: isLoadingTypes } = useTypes();
+  const { data: categories } = useCategories();
+  const { data: types } = useTypes();
 
   // Client-side filtering, sorting, and pagination
   const processedData = useMemo(() => {
@@ -99,7 +100,7 @@ export default function FreeAiPage() {
       allToolsData.results || allToolsData.data || [];
 
     // Filter tools based on search query
-    let filteredTools = allTools.filter(tool => {
+    const filteredTools = allTools.filter((tool: Tool) => {
       const matchesSearch = !searchQuery ||
         tool.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         tool.description.toLowerCase().includes(searchQuery.toLowerCase());
@@ -114,14 +115,14 @@ export default function FreeAiPage() {
     });
 
     // Sort tools
-    filteredTools.sort((a, b) => {
+    filteredTools.sort((a: Tool, b: Tool) => {
       switch (sortBy) {
         case 'popular':
           return (b.upvote_count || 0) - (a.upvote_count || 0);
         case 'trending':
           return (b.trend_count || 0) - (a.trend_count || 0);
         case 'rating':
-          return (b.rating || 0) - (a.rating || 0);
+          return Number(b.rating || 0) - Number(a.rating || 0);
         case 'az':
           return a.name.localeCompare(b.name);
         case 'za':
@@ -203,7 +204,7 @@ export default function FreeAiPage() {
 
   // Generate pagination items
   const getPaginationItems = () => {
-    const items = [];
+    const items: ReactElement[] = [];
     const { totalPages } = processedData;
     const maxPagesToShow = 5;
 
@@ -225,7 +226,7 @@ export default function FreeAiPage() {
 
     // Calculate range of pages to show
     let startPage = Math.max(2, currentPage - Math.floor(maxPagesToShow / 2));
-    let endPage = Math.min(totalPages - 1, startPage + maxPagesToShow - 3);
+    const endPage = Math.min(totalPages - 1, startPage + maxPagesToShow - 3);
 
     // Adjust startPage if we're near the end
     if (endPage === totalPages - 1) {
@@ -327,13 +328,15 @@ export default function FreeAiPage() {
             <form onSubmit={handleSearchSubmit}>
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div className="flex-1">
-                  <input
-                    type="text"
-                    placeholder="Search AI tools..."
-                    className="w-full px-4 py-2 border border-primary rounded-md focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-500"
-                    value={searchQuery}
-                    onChange={handleSearchChange}
-                  />
+                  <Suspense>
+                    <input
+                      type="text"
+                      placeholder="Search AI tools..."
+                      className="w-full px-4 py-2 border border-primary rounded-md focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-500"
+                      value={searchQuery}
+                      onChange={handleSearchChange}
+                    />
+                  </Suspense>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <select
@@ -342,7 +345,7 @@ export default function FreeAiPage() {
                     onChange={handleCategoryChange}
                   >
                     <option value="">All Categories</option>
-                    {categories?.map(category => (
+                    {categories?.map((category: Category) => (
                       <option key={category.id} value={category.id.toString()}>
                         {category.name}
                       </option>
@@ -355,7 +358,7 @@ export default function FreeAiPage() {
                     onChange={handleTypeChange}
                   >
                     <option value="">All Types</option>
-                    {types?.map(type => (
+                    {types?.map((type: Type) => (
                       <option key={type.id} value={type.id.toString()}>
                         {type.name}
                       </option>
@@ -412,7 +415,7 @@ export default function FreeAiPage() {
             </div>
           ) : (
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {tools.map((tool) => (
+              {tools.map((tool: Tool) => (
                 <ToolCard
                   key={tool.id}
                   id={String(tool.id)}

@@ -26,7 +26,7 @@ export default function FAQPage() {
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
           <div className="max-w-3xl mx-auto divide-y-2 divide-primary">
             <h2 className="text-3xl font-extrabold text-black text-center mb-8">Frequently Asked Questions</h2>
-            
+
             <div className="mt-8">
               <dl className="divide-y divide-primary">
                 <div className="pt-6 pb-8">
@@ -50,7 +50,7 @@ export default function FAQPage() {
                   </dt>
                   <dd className="mt-2 pr-12">
                     <p className="text-base text-black">
-                      No, we list both free and paid AI tools. Each tool listing clearly indicates whether it's free, has a free tier, or is a paid service. We have a dedicated section for free AI tools that you can access from our navigation menu.
+                      No, we list both free and paid AI tools. Each tool listing clearly indicates whether it&apos;s free, has a free tier, or is a paid service. We have a dedicated section for free AI tools that you can access from our navigation menu.
                     </p>
                   </dd>
                 </div>
@@ -89,7 +89,7 @@ export default function FAQPage() {
                   </dt>
                   <dd className="mt-2 pr-12">
                     <p className="text-base text-black">
-                      We continuously update our directory with new AI tools and review existing listings to ensure information is current. The AI landscape evolves rapidly, and we're committed to providing the most up-to-date information possible.
+                      We continuously update our directory with new AI tools and review existing listings to ensure information is current. The AI landscape evolves rapidly, and we&apos;re committed to providing the most up-to-date information possible.
                     </p>
                   </dd>
                 </div>
@@ -102,7 +102,7 @@ export default function FAQPage() {
                   </dt>
                   <dd className="mt-2 pr-12">
                     <p className="text-base text-black">
-                      Yes, we provide brief overviews and key information for each tool. For selected tools, we offer more in-depth reviews that analyze features, usability, and potential use cases. We're continuously expanding our review coverage.
+                      Yes, we provide brief overviews and key information for each tool. For selected tools, we offer more in-depth reviews that analyze features, usability, and potential use cases. We&apos;re continuously expanding our review coverage.
                     </p>
                   </dd>
                 </div>

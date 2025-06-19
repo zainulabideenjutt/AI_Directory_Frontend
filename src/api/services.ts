@@ -36,6 +36,7 @@ export interface Tool {
   date_added: string;
   date_updated: string;
 }
+
 export interface SubscribePayload {
   email: string;
 }
@@ -45,9 +46,19 @@ export interface SubscribeResponse {
   message: string;
 }
 
+export interface QueryParams {
+  page?: number;
+  page_size?: number;
+  ordering?: string;
+  search?: string;
+  category?: number;
+  type?: number;
+  hashtag?: number;
+}
+
 
 // API service functions
-export const fetchTools = async (params?: any) => {
+export const fetchTools = async (params?: QueryParams) => {
   const response = await axiosInstance.get('api/tools', { params });
   return response.data;
 };
@@ -72,25 +83,25 @@ export const fetchToolById = async (id: number) => {
   return response.data;
 };
 
-export const fetchToolsByCategory = async (categoryId: number, params?: any) => {
+export const fetchToolsByCategory = async (categoryId: number, params?: QueryParams) => {
   const queryParams = { ...params, category: categoryId };
   const response = await axiosInstance.get('api/tools', { params: queryParams });
   return response.data;
 };
 
-export const fetchToolsByType = async (typeId: number, params?: any) => {
+export const fetchToolsByType = async (typeId: number, params?: QueryParams) => {
   const queryParams = { ...params, type: typeId };
   const response = await axiosInstance.get('api/tools', { params: queryParams });
   return response.data;
 };
 
-export const fetchToolsByHashtag = async (hashtagId: number, params?: any) => {
+export const fetchToolsByHashtag = async (hashtagId: number, params?: QueryParams) => {
   const queryParams = { ...params, hashtag: hashtagId };
   const response = await axiosInstance.get('api/tools', { params: queryParams });
   return response.data;
 };
 
-export const searchTools = async (query: string, params?: any) => {
+export const searchTools = async (query: string, params?: QueryParams) => {
   const queryParams = { ...params, search: query };
   const response = await axiosInstance.get('api/tools', { params: queryParams });
   return response.data;

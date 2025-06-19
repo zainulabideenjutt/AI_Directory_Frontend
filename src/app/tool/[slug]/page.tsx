@@ -6,7 +6,7 @@ import Image from 'next/image';
 import {
   ArrowLeftIcon,
   StarIcon,
-  CheckCircleIcon,
+  // CheckCircleIcon,
   ArrowTrendingUpIcon,
   HeartIcon
 } from '@heroicons/react/24/outline';
@@ -14,6 +14,7 @@ import {
   StarIcon as StarIconSolid,
   CheckCircleIcon as CheckCircleIconSolid
 } from '@heroicons/react/24/solid';
+import { Hashtag } from '@/api/services';
 import Navbar from '../../../components/Navbar';
 import Footer from '../../../components/Footer';
 import Newsletter from '../../../components/Newsletter';
@@ -63,7 +64,7 @@ export default function ToolDetailPage({ params }: { params: Promise<{ slug: str
         <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl font-bold text-foreground">Tool not found</h1>
           <p className="mt-4 text-foreground opacity-80">
-            The tool you're looking for doesn't exist or has been removed.
+            The tool you&apos;re looking for doesn&apos;t exist or has been removed.
           </p>
           <Link href="/" className="mt-8 inline-flex items-center text-primary hover:text-accent">
             <ArrowLeftIcon className="h-5 w-5 mr-2" />
@@ -185,7 +186,7 @@ export default function ToolDetailPage({ params }: { params: Promise<{ slug: str
                   <div className="mb-8">
                     <h3 className="text-lg font-semibold text-white mb-3">Hashtags</h3>
                     <div className="flex flex-wrap gap-2">
-                      {tool.hashtags.map((hashtag: any) => (
+                      {tool.hashtags.map((hashtag: Hashtag) => (
                         <span
                           key={hashtag.id}
                           className="px-3 uppercase py-1 rounded-full text-sm font-medium bg-white/10 text-white/80 hover:bg-white/20 transition-colors cursor-pointer"

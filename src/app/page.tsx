@@ -1,6 +1,6 @@
-import Image from "next/image";
+// import Image from "next/image";
 import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
+// import Hero from "../components/Hero";
 import Categories from "../components/Categories";
 import FeaturedTools from "../components/FeaturedTools";
 import Stats from "../components/Stats";

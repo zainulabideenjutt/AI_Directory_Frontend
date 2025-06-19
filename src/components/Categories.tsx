@@ -14,6 +14,7 @@ import {
   SparklesIcon
 } from '@heroicons/react/24/outline';
 import { useLimitedCategories } from '@/hooks/useApi';
+import { Category } from '@/api/services';
 
 // Map of icons to use based on category name (case insensitive partial match)
 const iconMap: Record<string, React.ReactNode> = {
@@ -34,12 +35,12 @@ const iconMap: Record<string, React.ReactNode> = {
 // Helper function to get an appropriate icon based on category name
 const getCategoryIcon = (categoryName: string): React.ReactNode => {
   const lowerCaseName = categoryName.toLowerCase();
-  
+
   // Find the first matching key in the iconMap
-  const matchingKey = Object.keys(iconMap).find(key => 
+  const matchingKey = Object.keys(iconMap).find(key =>
     lowerCaseName.includes(key.toLowerCase())
   );
-  
+
   // Return the matching icon or the default icon
   return matchingKey ? iconMap[matchingKey] : iconMap.default;
 };
@@ -71,9 +72,9 @@ const Categories = () => {
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {categories?.map((category) => (
-              <CategoryCard 
-                key={category.id} 
+            {categories?.map((category: Category) => (
+              <CategoryCard
+                key={category.id}
                 title={category.name}
                 description={category.description || `Explore ${category.name} AI tools`}
                 icon={getCategoryIcon(category.name)}
@@ -84,8 +85,8 @@ const Categories = () => {
         )}
 
         <div className="mt-12 text-center">
-          <a 
-            href="/ai-tools" 
+          <a
+            href="/ai-tools"
             className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primary-dark transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
           >
             View All Categories

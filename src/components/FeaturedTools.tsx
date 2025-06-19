@@ -4,6 +4,7 @@ import React from 'react';
 import ToolCard from './ToolCard';
 import Link from 'next/link';
 import { useFeaturedTools } from '@/hooks/useApi';
+import { Tool } from '@/api/services';
 
 const FeaturedTools = () => {
   const { data: featuredTools, isLoading, error } = useFeaturedTools(4);
@@ -33,9 +34,9 @@ const FeaturedTools = () => {
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {featuredTools?.map((tool) => (
-              <ToolCard 
-                key={tool.id} 
+            {featuredTools?.map((tool: Tool) => (
+              <ToolCard
+                key={tool.id}
                 id={String(tool.id)}
                 title={tool.name}
                 description={tool.description}

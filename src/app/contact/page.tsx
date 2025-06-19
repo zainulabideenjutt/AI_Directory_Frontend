@@ -16,7 +16,7 @@ export default function ContactPage() {
                 Contact Us
               </h1>
               <p className="mt-6 max-w-2xl mx-auto text-xl">
-                Have questions or suggestions? We'd love to hear from you.
+                Have questions or suggestions? We&apos;d love to hear from you.
               </p>
             </div>
           </div>
@@ -119,7 +119,7 @@ export default function ContactPage() {
                 <h3 className="mt-4 text-lg font-medium text-black">Email</h3>
                 <p className="mt-2 text-base text-center text-black">contact@aixploria.com</p>
               </div>
-              
+
               <div className="flex flex-col items-center p-6 bg-white rounded-lg border border-primary">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -128,7 +128,7 @@ export default function ContactPage() {
                 <h3 className="mt-4 text-lg font-medium text-black">Location</h3>
                 <p className="mt-2 text-base text-center text-black">San Francisco, CA</p>
               </div>
-              
+
               <div className="flex flex-col items-center p-6 bg-white rounded-lg border border-primary">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />

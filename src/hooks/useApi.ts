@@ -10,10 +10,10 @@ import {
   fetchToolsByHashtag,
   searchTools,
   // Interfaces are used as type annotations in the code
-  Tool,
-  Category,
-  Type,
-  Hashtag
+  // Tool,
+  // Category,
+  // Type,
+  // Hashtag
 } from '@/api/services';
 
 // Hook for fetching all tools with optional pagination and filtering

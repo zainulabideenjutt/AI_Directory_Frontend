@@ -8,12 +8,12 @@ import { subscribeUser } from '@/api/services';
 
 const Newsletter = () => {
   const [email, setEmail] = useState('');
-  const [submitted, setSubmitted] = useState(false);
+  // const [submitted, setSubmitted] = useState(false); // Removed unused state
 
   const { mutate, isPending, isSuccess, isError, error, data } = useMutation({
     mutationFn: subscribeUser,
     onSuccess: () => {
-      setSubmitted(true);
+      // Success handled by showing success message
     },
   });
   console.log('isSuccess', isSuccess, 'isError', isError, 'data', data, 'error', error);
@@ -79,7 +79,9 @@ const Newsletter = () => {
 
               {isError && (
                 <p className="mt-4 text-sm text-red-300">
-                  {(error as any)?.response?.data?.detail || (error as any)?.response?.data?.email[0] || 'Failed to subscribe. Please try again.'}
+                  {(error as Error & { response?: { data?: { detail?: string; email?: string[] } } })?.response?.data?.detail ||
+                    (error as Error & { response?: { data?: { detail?: string; email?: string[] } } })?.response?.data?.email?.[0] ||
+                    'Failed to subscribe. Please try again.'}
                 </p>
               )}
 

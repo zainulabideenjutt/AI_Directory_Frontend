@@ -20,40 +20,40 @@ import Newsletter from '../../../components/Newsletter';
 import { useTool } from '@/hooks/useApi';
 
 // Sample Tool Data
-const sampleToolData = {
-  id: 1,
-  name: 'Leonardo AI',
-  image_url: 'http://127.0.0.1:8000/media/tools/images/d234c6aa-eb88-4ea9-83ce-8d6c22151fac.webp',
-  logo_url: 'http://127.0.0.1:8000/media/tools/logos/092b78b7-568f-4f6d-ab38-f4e6b3af3797.png',
-  description: 'A complete design platform that generates professional images, 3D textures and designs...',
-  upvote_count: 414,
-  trend_count: 94215,
-  rating: '4.50',
-  is_verified: true,
-  url: 'https://leonardo.ai/',
-  rank_in_category: 1,
-  category: {
-    id: 27,
-    name: '3D model',
-    description: 'The best AI that offer online 3D modeling.'
-  },
-  type: {
-    id: 2,
-    name: 'Freemium'
-  },
-  hashtags: [
-    { id: 5, name: 'AIxploria Selection', description: '...' },
-    { id: 52, name: 'Image Generators', description: '...' },
-    { id: 64, name: '3D model', description: '...' }
-  ],
-  date_added: '2025-06-10T04:08:30.143786Z',
-  date_updated: '2025-06-10T04:08:30.143786Z'
-};
+// const sampleToolData = {
+//   id: 1,
+//   name: 'Leonardo AI',
+//   image_url: 'http://127.0.0.1:8000/media/tools/images/d234c6aa-eb88-4ea9-83ce-8d6c22151fac.webp',
+//   logo_url: 'http://127.0.0.1:8000/media/tools/logos/092b78b7-568f-4f6d-ab38-f4e6b3af3797.png',
+//   description: 'A complete design platform that generates professional images, 3D textures and designs...',
+//   upvote_count: 414,
+//   trend_count: 94215,
+//   rating: '4.50',
+//   is_verified: true,
+//   url: 'https://leonardo.ai/',
+//   rank_in_category: 1,
+//   category: {
+//     id: 27,
+//     name: '3D model',
+//     description: 'The best AI that offer online 3D modeling.'
+//   },
+//   type: {
+//     id: 2,
+//     name: 'Freemium'
+//   },
+//   hashtags: [
+//     { id: 5, name: 'AIxploria Selection', description: '...' },
+//     { id: 52, name: 'Image Generators', description: '...' },
+//     { id: 64, name: '3D model', description: '...' }
+//   ],
+//   date_added: '2025-06-10T04:08:30.143786Z',
+//   date_updated: '2025-06-10T04:08:30.143786Z'
+// };
 
 export default function ToolDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = React.use(params);
-  const { data: tool } = useTool(slug);
-  
+  const { data: tool } = useTool(parseInt(slug));
+
   // const tool = sampleToolData;
 
   if (!tool) {
@@ -134,7 +134,7 @@ export default function ToolDetailPage({ params }: { params: Promise<{ slug: str
                             ) : i === fullStars && hasHalfStar ? (
                               <div key={i} className="relative">
                                 <StarIcon className="h-5 w-5 text-yellow-400" />
-                                <StarIconSolid className="h-5 w-5 text-yellow-400 absolute top-0 left-0 w-1/2 overflow-hidden" />
+                                <StarIconSolid className="h-5 text-yellow-400 absolute top-0 left-0 w-1/2 overflow-hidden" />
                               </div>
                             ) : (
                               <StarIcon key={i} className="h-5 w-5 text-yellow-400" />
@@ -161,10 +161,10 @@ export default function ToolDetailPage({ params }: { params: Promise<{ slug: str
 
                         <span
                           className={`px-3 py-1 rounded-full text-sm font-medium ${tool.type.name === 'Free'
-                              ? 'bg-green-100 text-green-800'
-                              : tool.type.name === 'Freemium'
-                                ? 'bg-blue-100 text-blue-800'
-                                : 'bg-yellow-100 text-yellow-800'
+                            ? 'bg-green-100 text-green-800'
+                            : tool.type.name === 'Freemium'
+                              ? 'bg-blue-100 text-blue-800'
+                              : 'bg-yellow-100 text-yellow-800'
                             }`}
                         >
                           {tool.type.name}
@@ -185,7 +185,7 @@ export default function ToolDetailPage({ params }: { params: Promise<{ slug: str
                   <div className="mb-8">
                     <h3 className="text-lg font-semibold text-white mb-3">Hashtags</h3>
                     <div className="flex flex-wrap gap-2">
-                      {tool.hashtags.map((hashtag) => (
+                      {tool.hashtags.map((hashtag: any) => (
                         <span
                           key={hashtag.id}
                           className="px-3 uppercase py-1 rounded-full text-sm font-medium bg-white/10 text-white/80 hover:bg-white/20 transition-colors cursor-pointer"

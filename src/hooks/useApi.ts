@@ -9,6 +9,7 @@ import {
   fetchToolsByType,
   fetchToolsByHashtag,
   searchTools,
+  // Interfaces are used as type annotations in the code
   Tool,
   Category,
   Type,
@@ -16,7 +17,11 @@ import {
 } from '@/api/services';
 
 // Hook for fetching all tools with optional pagination and filtering
-export const useTools = (page = 1, pageSize = 10, filters?: any) => {
+interface FilterParams {
+  [key: string]: string | number | boolean | undefined;
+}
+
+export const useTools = (page = 1, pageSize = 10, filters?: FilterParams) => {
   const params = {
     page,
     page_size: pageSize,
@@ -90,7 +95,7 @@ export const useTool = (id: number) => {
 };
 
 // Hook for fetching tools by category
-export const useToolsByCategory = (categoryId: number, page = 1, pageSize = 10, filters?: any) => {
+export const useToolsByCategory = (categoryId: number, page = 1, pageSize = 10, filters?: FilterParams) => {
   const params = {
     page,
     page_size: pageSize,
@@ -105,7 +110,7 @@ export const useToolsByCategory = (categoryId: number, page = 1, pageSize = 10, 
 };
 
 // Hook for fetching tools by type
-export const useToolsByType = (typeId: number, page = 1, pageSize = 10, filters?: any) => {
+export const useToolsByType = (typeId: number, page = 1, pageSize = 10, filters?: FilterParams) => {
   const params = {
     page,
     page_size: pageSize,
@@ -120,7 +125,7 @@ export const useToolsByType = (typeId: number, page = 1, pageSize = 10, filters?
 };
 
 // Hook for fetching tools by hashtag
-export const useToolsByHashtag = (hashtagId: number, page = 1, pageSize = 10, filters?: any) => {
+export const useToolsByHashtag = (hashtagId: number, page = 1, pageSize = 10, filters?: FilterParams) => {
   const params = {
     page,
     page_size: pageSize,
@@ -135,7 +140,7 @@ export const useToolsByHashtag = (hashtagId: number, page = 1, pageSize = 10, fi
 };
 
 // Hook for searching tools
-export const useSearchTools = (query: string, page = 1, pageSize = 10, filters?: any) => {
+export const useSearchTools = (query: string, page = 1, pageSize = 10, filters?: FilterParams) => {
   const params = {
     page,
     page_size: pageSize,

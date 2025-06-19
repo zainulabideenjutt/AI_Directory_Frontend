@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#8e44ad" />
+  <text x="200" y="150" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white">Claude</text>
+  <circle cx="200" cy="100" r="30" fill="white" opacity="0.2" />
+  <path d="M185,100 A15,15 0 0 1 215,100" stroke="white" stroke-width="3" fill="none" />
+</svg>

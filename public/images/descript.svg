@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#5a67d8" />
+  <text x="200" y="150" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white">Descript</text>
+  <path d="M160,90 L240,90 L240,110 L160,110 Z" fill="white" opacity="0.2" />
+  <path d="M170,100 L190,100 M210,100 L230,100" stroke="white" stroke-width="2" />
+</svg>

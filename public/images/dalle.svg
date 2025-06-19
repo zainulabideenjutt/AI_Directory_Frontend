@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#5436da" />
+  <text x="200" y="150" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white">DALL-E</text>
+  <path d="M200,80 L230,130 L170,130 Z" fill="white" opacity="0.2" />
+</svg>

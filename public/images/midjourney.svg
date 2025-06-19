@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#1a1a1a" />
+  <text x="200" y="150" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white">Midjourney</text>
+  <path d="M160,100 L200,80 L240,100 L240,140 L200,160 L160,140 Z" fill="white" opacity="0.2" />
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" width="200" height="50">
+  <path d="M20 10 L30 40 L10 40 Z" fill="#2563eb" />
+  <path d="M35 10 L45 40 L25 40 Z" fill="#1d4ed8" />
+  <text x="55" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2563eb">Aixploria</text>
+</svg>

@@ -1,0 +1,227 @@
+@import "tailwindcss";
+
+:root {
+  /* Primary color - Deep blue for trust and professionalism */
+  --primary: #3B82F6;
+  --primary-dark: #2563EB;
+  --primary-light: #60A5FA;
+  
+  /* Accent color - Vibrant teal for creativity and innovation */
+  --accent: #10B981;
+  --accent-dark: #059669;
+  --accent-light: #34D399;
+  
+  /* Neutral colors */
+  --black: #111827;
+  --white: #ffffff;
+  --background: #F9FAFB;
+  --foreground: #1F2937;
+  
+  /* Card styling */
+  --card-bg: #ffffff;
+  --card-border: #E5E7EB;
+  --card-shadow: rgba(0, 0, 0, 0.05);
+  
+  /* Input styling */
+  --input-bg: #ffffff;
+  --input-border: #D1D5DB;
+  --input-text: #1F2937;
+  --input-placeholder: #9CA3AF;
+  
+  /* Navigation styling */
+  --nav-bg: #ffffff;
+  --nav-border: #E5E7EB;
+  
+  /* Footer styling */
+  --footer-bg: #F3F4F6;
+  --footer-text: #4B5563;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom utility classes for our color scheme */
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-primary-dark {
+  background-color: var(--primary-dark);
+}
+
+.bg-primary-light {
+  background-color: var(--primary-light);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.bg-accent-dark {
+  background-color: var(--accent-dark);
+}
+
+.bg-accent-light {
+  background-color: var(--accent-light);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-primary-dark {
+  color: var(--primary-dark);
+}
+
+.text-primary-light {
+  color: var(--primary-light);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.text-accent-dark {
+  color: var(--accent-dark);
+}
+
+.text-accent-light {
+  color: var(--accent-light);
+}
+
+.border-primary {
+  border-color: var(--primary);
+}
+
+.border-primary-dark {
+  border-color: var(--primary-dark);
+}
+
+.border-primary-light {
+  border-color: var(--primary-light);
+}
+
+.border-accent {
+  border-color: var(--accent);
+}
+
+.border-accent-dark {
+  border-color: var(--accent-dark);
+}
+
+.border-accent-light {
+  border-color: var(--accent-light);
+}
+
+.hover\:bg-primary:hover {
+  background-color: var(--primary);
+}
+
+.hover\:bg-primary-dark:hover {
+  background-color: var(--primary-dark);
+}
+
+.hover\:bg-primary-light:hover {
+  background-color: var(--primary-light);
+}
+
+.hover\:bg-accent:hover {
+  background-color: var(--accent);
+}
+
+.hover\:bg-accent-dark:hover {
+  background-color: var(--accent-dark);
+}
+
+.hover\:bg-accent-light:hover {
+  background-color: var(--accent-light);
+}
+
+.hover\:text-primary:hover {
+  color: var(--primary);
+}
+
+.hover\:text-primary-dark:hover {
+  color: var(--primary-dark);
+}
+
+.hover\:text-primary-light:hover {
+  color: var(--primary-light);
+}
+
+.hover\:text-accent:hover {
+  color: var(--accent);
+}
+
+.hover\:text-accent-dark:hover {
+  color: var(--accent-dark);
+}
+
+.hover\:text-accent-light:hover {
+  color: var(--accent-light);
+}
+
+.hover\:border-primary:hover {
+  border-color: var(--primary);
+}
+
+.hover\:border-primary-dark:hover {
+  border-color: var(--primary-dark);
+}
+
+.hover\:border-primary-light:hover {
+  border-color: var(--primary-light);
+}
+
+.hover\:border-accent:hover {
+  border-color: var(--accent);
+}
+
+.hover\:border-accent-dark:hover {
+  border-color: var(--accent-dark);
+}
+
+.hover\:border-accent-light:hover {
+  border-color: var(--accent-light);
+}
+
+.focus\:ring-primary:focus {
+  --tw-ring-color: var(--primary);
+}
+
+.focus\:border-primary:focus {
+  border-color: var(--primary);
+}
+
+.focus\:ring-primary-dark:focus {
+  --tw-ring-color: var(--primary-dark);
+}
+
+.focus\:ring-primary-light:focus {
+  --tw-ring-color: var(--primary-light);
+}
+
+.focus\:ring-accent:focus {
+  --tw-ring-color: var(--accent);
+}
+
+.focus\:ring-accent-dark:focus {
+  --tw-ring-color: var(--accent-dark);
+}
+
+.focus\:ring-accent-light:focus {
+  --tw-ring-color: var(--accent-light);
+}

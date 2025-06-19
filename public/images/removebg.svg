@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#ff6b81" />
+  <text x="200" y="150" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white">Remove.bg</text>
+  <rect x="160" y="80" width="80" height="50" fill="white" opacity="0.3" />
+  <path d="M160,80 L240,130 M240,80 L160,130" stroke="#ff6b81" stroke-width="3" />
+</svg>

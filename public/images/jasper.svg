@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#ff6f61" />
+  <text x="200" y="150" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white">Jasper</text>
+  <rect x="160" y="90" width="80" height="40" rx="10" fill="white" opacity="0.2" />
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#4f7df3" />
+  <text x="200" y="150" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white">Lumen5</text>
+  <polygon points="180,90 220,90 230,110 200,130 170,110" fill="white" opacity="0.2" />
+  <rect x="195" y="90" width="10" height="20" fill="white" opacity="0.4" />
+</svg>

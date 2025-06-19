@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#2ecc71" />
+  <text x="200" y="150" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white">Writesonic</text>
+  <path d="M160,90 L170,110 L180,90 L190,110 L200,90 L210,110 L220,90 L230,110 L240,90" stroke="white" stroke-width="3" fill="none" />
+</svg>

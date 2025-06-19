@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#1abc9c" />
+  <text x="200" y="150" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white">AI Healthcare</text>
+  <path d="M180,80 L220,80 L220,120 L180,120 Z" stroke="white" stroke-width="2" fill="none" />
+  <path d="M200,90 L200,110 M190,100 L210,100" stroke="white" stroke-width="2" />
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#6c5ce7" />
+  <text x="200" y="150" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white">Stable Diffusion</text>
+  <path d="M160,90 C180,70 220,70 240,90 C260,110 260,130 240,150 C220,170 180,170 160,150 C140,130 140,110 160,90 Z" fill="white" opacity="0.2" />
+  <circle cx="200" cy="120" r="5" fill="white" opacity="0.5" />
+</svg>

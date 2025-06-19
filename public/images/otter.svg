@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#235997" />
+  <text x="200" y="150" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white">Otter.ai</text>
+  <ellipse cx="200" cy="100" rx="40" ry="25" fill="white" opacity="0.2" />
+  <circle cx="180" cy="95" r="5" fill="white" opacity="0.4" />
+  <circle cx="220" cy="95" r="5" fill="white" opacity="0.4" />
+</svg>

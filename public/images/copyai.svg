@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#3498db" />
+  <text x="200" y="150" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white">Copy.ai</text>
+  <rect x="160" y="80" width="50" height="60" rx="5" fill="white" opacity="0.2" />
+  <rect x="190" y="90" width="50" height="60" rx="5" fill="white" opacity="0.3" />
+</svg>

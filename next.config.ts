@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'aixploria.com',
+        hostname: 'www.aixploria.com',
         pathname: '/**',
       },
     ],
